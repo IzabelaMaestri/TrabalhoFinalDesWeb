@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Pagina Cadastro Trabalho final</title>
+    <title> Pagina para cadastro de mateirais</title>
     <link rel="stylesheet" href="estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -85,61 +85,59 @@
 
     <main>
 
-        <section class="form-section">
-            <h2 class="text-center mb-4"> Vamos criar a sua conta</h2>
-            <form class="register-form needs-validation" novalidate>
+       <section class="form-section">
+            <h2 class="text-center mb-4">Cadastrar Novo Material Didático</h2>
+            <form class="needs-validation" novalidate onsubmit="alert('Cadastro de material simulado com sucesso!'); return true;">
                 <div class="mb-3">
-                    <label for="inputNome" class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" id="inputNome" placeholder="Seu nome completo" required
-                        minlength="3">
+                    <label for="materialTitulo" class="form-label">Título do Material</label>
+                    <input type="text" class="form-control" id="materialTitulo" placeholder="Ex: A Revolução Francesa" required minlength="5">
                     <div class="invalid-feedback">
-                        Insira seu nome completo (mínimo 3 caracteres).
+                        O título é obrigatório e deve ter pelo menos 5 caracteres.
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="seuemail@exemplo.com"
-                        required>
+                    <label for="materialDescricao" class="form-label">Descrição</label>
+                    <textarea class="form-control" id="materialDescricao" rows="3" placeholder="Descreva o conteúdo do material" required minlength="10"></textarea>
                     <div class="invalid-feedback">
-                        Insira um email válido.
+                        A descrição é obrigatória e deve ter pelo menos 10 caracteres.
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputPassword" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Crie uma senha" required
-                        minlength="8">
+                    <label for="materialTipo" class="form-label">Tipo de Material</label>
+                    <select class="form-select" id="materialTipo" required>
+                        <option value="">Selecione...</option>
+                        <option value="video">Vídeo</option>
+                        <option value="texto">Texto</option>
+                        <option value="pdf">PDF</option>
+                    </select>
                     <div class="invalid-feedback">
-                        A senha deve ter pelo menos 8 caracteres.
+                        Selecione o tipo de material.
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputConfirmPassword" class="form-label">Confirme a Senha</label>
-                    <input type="password" class="form-control" id="inputConfirmPassword"
-                        placeholder="Confirme sua senha" required>
+                    <label for="materialDisciplina" class="form-label">Disciplina</label>
+                    <input type="text" class="form-control" id="materialDisciplina" placeholder="Ex: História, Matemática, etc." required>
                     <div class="invalid-feedback">
-                        As senhas não são iguais.
+                        A disciplina é obrigatória.
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Você é:</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="userType" id="radioEstudante"
-                            value="estudante" required>
-                        <label class="form-check-label" for="radioEstudante">Estudante</label>
+                    <label for="materialNivel" class="form-label">Nível/Série</label>
+                    <input type="text" class="form-control" id="materialNivel" placeholder="Ex: Ensino Fundamental I, 9º ano, Ensino Médio" required>
+                    <div class="invalid-feedback">
+                        O nível/série é obrigatório.
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="userType" id="radioEducador" value="educador"
-                            required>
-                        <label class="form-check-label" for="radioEducador">Educador</label>
-                        <div class="invalid-feedback">
-                            Selecione o tipo de usuário.
-                        </div>
+                </div>
+                <div class="mb-3">
+                    <label for="materialLink" class="form-label">Link ou Conteúdo (URL para vídeo/PDF ou texto direto)</label>
+                    <textarea class="form-control" id="materialLink" rows="5" placeholder="Insira a URL do vídeo/PDF ou o conteúdo do texto" required></textarea>
+                    <div class="invalid-feedback">
+                        O link ou conteúdo é obrigatório.
                     </div>
                 </div>
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Cadastrar Material</button>
                 </div>
-                <p class="text-center mt-3">Já tem uma conta? <a href="login.html">Faça login aqui</a>.</p>
             </form>
         </section>
 

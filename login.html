@@ -7,55 +7,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Pagina Login Trabalho final</title>
     <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 </head>
 
 <body>
 
     <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.jfif" alt="Logo SaberConecta">
+                    Saber Conecta
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNAV"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="container">
-            <h1 class="sigla">SC</h1>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html"> Home </a></li>
-                    <li><a href="sobre.html"> Sobre nós </a></li>
-                    <li><a href="materias.html"> Matérias </a></li>
-                    <li><a href="login.html" class="ativo"> Login </a></li>
-                </ul>
-            </nav>
-        </div>
+                <div class="collapse navbar-collapse" id="navbarNAV">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Público -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" data-access="public"> Home </a>
+                        </li>
 
+                        <!-- Público -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobre.html" data-access="public"> Sobre nós </a>
+                        </li>
+
+                        <!-- Para o login -->
+                        <li class="nav-item" id="navLogin">
+                            <a class="nav-link" href="login.html" data-access="public"> Login </a>
+                        </li>
+
+                        <!-- Para cadastro -->
+                        <li class="nav-item" id="navRegister">
+                            <a class="nav-link" href="cadastro.html" data-access="public"> Cadastro </a>
+                        </li>
+
+                        <!-- Para estudantes (Exemplo, visibilidade com JS) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="materias_estudante.html" data-access="estudante"> Meus Materiais
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil_estudante.html" data-access="estudante"> Meu Perfil </a>
+                        </li>
+
+                        <!-- Para Educadores (Exemplo, visibilidade com JS) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="meus_materiais.html" data-access="educador"> Materiais Cadastrados</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadastro_material.html" data-access="educador"> Cadastrar Material
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="lista_usuarios.html" data-access="educador"> Gerenciar Usuários
+                            </a>
+                        </li>
+
+                        <!-- Para sair (visibilidade via JS) -->
+                        <li class="nav-item" id="navLogout">
+                            <a class="nav-link" href="#" id="logoutBtn"> Sair </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main class="login-sc">
+    <main>
 
-        <div class="login-form-container">
-            <h2> Login </h2>
-
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="email"> E-mail: </label>
-                    <input type="email" name="email" id="email" placeholder="exemplo.email@gmail.com" required>
+        <section class="form-section">
+            <h2 class="text-center mb-4">Acesse sua Conta</h2>
+            <form class="login-form">
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="seuemail@exemplo.com" required>
+                    <div class="invalid-feedback">
+                        Por favor, insira um email válido.
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="password"> Senha: </label>
-                    <input type="password" id="password" name="password" placeholder="********" required>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Sua senha" required minlength="8">
+                    <div class="invalid-feedback">
+                        A senha deve ter pelo menos 8 caracteres.
+                    </div>
                 </div>
-
-                <button type="submit" class="login-button"> Entrar </button>
-                <p><a href="cadastro.html"> Cadastrar </a></p>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
+                </div>
+                <p class="text-center mt-3">Ainda não tem conta? <a href="cadastro.html">Cadastre-se aqui</a>.</p>
+                <!--
+                    Testes
+                    Estudante: email: `estudante@saberconecta.com` / senha: `12345678`
+                    Educador: email: `educador@saberconecta.com` / senha: `12345678`
+                -->
             </form>
-        </div>
+        </section>
 
     </main>
 
-    <footer class="main-footer">
+    <footer class="main-footer text-center">
         <div class="container">
-            <p> Saber Conecta </p>
+            <p> &copy; 2025 Saber Conecta. Todos os direitos reservados.</p>
+            <p>Desenvolvido para a disciplina de Desenvolvimento WEB - UFU</p>
+            <p>Alinhado com o <a href="https://brasil.un.org/pt-br/sdgs/4" target="_blank"
+                    class="text-white text-decoration-none">ODS 4: Educação de Qualidade</a></p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="asset/js/script.js"></script>
 
 </body>
 

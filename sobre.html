@@ -5,48 +5,151 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Pagina Sobre Trabalho final</title>
+    <title> Pagina Sobre Nós</title>
     <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 </head>
 
 <body>
 
     <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.jfif" alt="Logo SaberConecta">
+                    Saber Conecta
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNAV"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="container">
-            <h1 class="sigla">SC</h1>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html"> Home </a></li>
-                    <li><a href="sobre.html" class="ativo"> Sobre nós </a></li>
-                    <li><a href="materias.html"> Matérias </a></li>
-                    <li><a href="login.html"> Login </a></li>
-                </ul>
-            </nav>
-        </div>
+                <div class="collapse navbar-collapse" id="navbarNAV">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Público -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" data-access="public"> Home </a>
+                        </li>
 
+                        <!-- Público -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobre.html" data-access="public"> Sobre nós </a>
+                        </li>
+
+                        <!-- Para o login -->
+                        <li class="nav-item" id="navLogin">
+                            <a class="nav-link" href="login.html" data-access="public"> Login </a>
+                        </li>
+
+                        <!-- Para cadastro -->
+                        <li class="nav-item" id="navRegister">
+                            <a class="nav-link" href="cadastro.html" data-access="public"> Cadastro </a>
+                        </li>
+
+                        <!-- Para estudantes (Exemplo, visibilidade com JS) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="materias_estudante.html" data-access="estudante"> Meus Materiais
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil_estudante.html" data-access="estudante"> Meu Perfil </a>
+                        </li>
+
+                        <!-- Para Educadores (Exemplo, visibilidade com JS) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="meus_materiais.html" data-access="educador"> Materiais Cadastrados</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadastro_material.html" data-access="educador"> Cadastrar Material
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="lista_usuarios.html" data-access="educador"> Gerenciar Usuários
+                            </a>
+                        </li>
+
+                        <!-- Para sair (visibilidade via JS) -->
+                        <li class="nav-item" id="navLogout">
+                            <a class="nav-link" href="#" id="logoutBtn"> Sair </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
 
-        <h1> Saber Conecta </h1>
+        <section class="container my-5 text-center">            
 
-        <h2> Sobre Nós </h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aliquid impedit odit sed
-            exercitationem vitae dolore laborum, aliquam dolores ex! Quasi consequatur ad vitae quos eligendi iste
-            voluptates, enim veritatis?
-        </p>
+            <h1 class="display-4 mb-4">Sobre Nós!</h1>
+            <p>Somos uma equipe apaixonada por tecnologia e ensino, comprometida em criar uma plataforma que conecta
+                estudantes e educadores, promovendo o compartilhamento de conhecimento e o desenvolvimento contínuo.</p>
 
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Para Estudantes</h5>
+                            <p class="card-text">Acesse a nossa biblioteca de materiais didáticos para reforçar seu
+                                aprendizado ou tirar alguma duvida que você tenha da materia.</p>
+                            <a href="login.html" class="btn btn-primary">Comece a Aprender</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Para Educadores</h5>
+                            <p class="card-text">Compartilhe seu conhecimento e ajude a construir um futuro ainda mais
+                                brilhante para aqueles que são o futuro da sociedade.</p>
+                            <a href="login.html" class="btn btn-success">Envie Materiais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-3">Nosso Compromisso com a Educação de Qualidade</h2>
+                    <p>O SaberConecta está alinhado com o <a href="https://brasil.un.org/pt-br/sdgs/4" target="_blank"
+                            class="text-primary">Objetivo de Desenvolvimento Sustentável (ODS) 4 da ONU</a>: "Assegurar
+                        a educação inclusiva e equitativa de qualidade, e promover oportunidades de aprendizagem ao
+                        longo da vida para todos".</p>
+                    <p>Ao conectar estudantes a conteúdos de qualidade e permitir que educadores compartilhem seu
+                        conhecimento, contribuímos para um futuro onde o acesso à informação e ao aprendizado seja uma
+                        realidade para todos.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="images/ods4.png"
+                        alt="Ícone ODS 4 Educação de Qualidade" class="img-fluid" style="max-height: 250px;">
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <footer class="main-footer">
+    <footer class="main-footer text-center">
         <div class="container">
-            <p> Saber Conecta </p>
+            <p> &copy; 2025 Saber Conecta. Todos os direitos reservados.</p>
+            <p>Desenvolvido para a disciplina de Desenvolvimento WEB - UFU</p>
+            <p>Alinhado com o <a href="https://brasil.un.org/pt-br/sdgs/4" target="_blank"
+                    class="text-white text-decoration-none">ODS 4: Educação de Qualidade</a></p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="asset/js/script.js"></script>
 
 </body>
 
