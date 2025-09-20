@@ -1,0 +1,361 @@
+/* ======================
+   Variáveis CSS
+====================== */
+:root {
+  --brand-bg: #8B0000;       /* vermelho vinho institucional */
+  --brand-text: #ffffff;
+  --brand-accent: #f5deb3;   /* bege */
+  --footer-bg: #8B0000;      /* mesmo vinho do header */
+  --shadow: rgba(0,0,0,0.1);
+  --hover-yellow: #f1c40f;   /* amarelo hover */
+}
+
+/* ======================
+   Reset e Base
+====================== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+/* ======================
+   Layout Principal
+====================== */
+main {
+  flex: 1;
+  padding: 0;
+}
+
+/* ======================
+   Header e Navbar
+====================== */
+.main-header,
+.navbar {
+  background-color: var(--brand-bg) !important;
+  box-shadow: 0 2px 6px var(--shadow);
+  padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--brand-text) !important;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar .nav-link {
+  color: var(--brand-text) !important;
+  margin-left: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--hover-yellow) !important;
+  text-decoration: underline;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ======================
+   Hero Section
+====================== */
+.hero-home {
+  background: linear-gradient(rgba(139,0,0,0.85), rgba(139,0,0,0.85)),
+              linear-gradient(135deg, var(--brand-bg), #c53030);
+  min-height: 60vh;
+  padding: 140px 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><polygon points="0 0 60 30 0 60"/></g></g></svg>');
+  pointer-events: none;
+}
+
+.hero-home .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-home h1, 
+.hero-home p {
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+/* ======================
+   Cards
+====================== */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 1px 8px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.card-hover:hover,
+.card-material:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body i {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ======================
+   Botões
+====================== */
+.btn-primary {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.btn-success {
+  background-color: #16a34a;
+  border-color: #16a34a;
+}
+
+.btn-success:hover {
+  background-color: #15803d;
+  border-color: #15803d;
+}
+
+.btn-danger {
+  background-color: var(--brand-bg);
+  border-color: var(--brand-bg);
+}
+
+.btn-danger:hover {
+  background-color: #a30000;
+  border-color: #a30000;
+}
+
+.btn-card {
+  min-width: 150px;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-form {
+  background-color: var(--brand-bg);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  min-width: 220px;
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-form:hover {
+  background-color: #a30000;
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* ======================
+   Seções Especiais
+====================== */
+.beneficios {
+  background-color: #f8fafc !important;
+}
+
+.beneficios i {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.beneficios i:hover {
+  transform: scale(1.2);
+}
+
+.cta {
+  background: linear-gradient(135deg, var(--brand-bg), #B22222);
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.cta h2,
+.cta p {
+  color: #fff !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* ======================
+   Footer
+====================== */
+.main-footer,
+footer {
+  background-color: var(--footer-bg);
+  color: #fff;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  margin-top: 0;
+}
+
+.main-footer a,
+footer a {
+  color: var(--hover-yellow);
+  text-decoration: none;
+}
+
+.main-footer a:hover,
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ======================
+   Formulários
+====================== */
+.form-section {
+  max-width: 640px;
+  margin: 120px auto 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  border-right: none;
+}
+
+.input-group .form-control {
+  border-left: none;
+}
+
+input.is-invalid,
+textarea.is-invalid,
+select.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+  font-size: 0.9rem;
+  color: #dc3545;
+}
+
+/* ======================
+   Listas
+====================== */
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+}
+
+/* ======================
+   Utilidades
+====================== */
+.search-bar {
+  margin-bottom: 2rem;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.user-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+/* ======================
+   Responsividade
+====================== */
+@media (max-width: 768px) {
+  .hero-home {
+    min-height: 50vh;
+    padding: 100px 15px;
+  }
+  
+  .hero-home h1 {
+    font-size: 2rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .btn-card {
+    min-width: 120px;
+    padding: 10px 20px;
+  }
+  
+  .form-section {
+    margin: 80px 15px 2rem 15px;
+    padding: 1.5rem;
+  }
+}
